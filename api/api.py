@@ -5,9 +5,9 @@ import json
 from bson import json_util,ObjectId
 
 #Mongo Atlas connection
-CONNECTION_STRING = "mongodb+srv://db_hseino:Everythingis6@cluster0.upiob.mongodb.net/db_hseino?retryWrites=true&w=majority"
+CONNECTION_STRING = "mongodb+srv://<dbname>:<password>@cluster0.upiob.mongodb.net/<dbname>?retryWrites=true&w=majority"
 client = pymongo.MongoClient(CONNECTION_STRING)
-db = client.get_database('db_hseino')
+db = client.get_database('<dbname>')
 collection = pymongo.collection.Collection(db, 'sapporo_info')
 
 app = Flask(__name__)
